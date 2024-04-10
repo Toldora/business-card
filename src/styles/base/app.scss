@@ -127,19 +127,10 @@ a {
 }
 
 .app {
-  height: vh(100);
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  @media (orientation: portrait) {
-    @include bg-img-webp('/img/bg/ver', true);
-  }
-
-  @media (orientation: landscape) {
-    @include bg-img-webp('/img/bg/hor', true);
-  }
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  background-color: var();
 }
