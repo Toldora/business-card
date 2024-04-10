@@ -1,0 +1,167 @@
+@mixin bg-image($path) {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  user-select: none;
+
+  @include bg-img-webp($path, true);
+}
+
+.main {
+  position: relative;
+  z-index: var(--z-main-content);
+  height: calc(vh(100) - var(--app-navbar-height));
+  display: flex;
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    max-width: unset;
+
+    &.main {
+      padding: 0;
+    }
+  }
+
+  @media (orientation: landscape) {
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+}
+
+.main__content {
+  @media (orientation: portrait) {
+    position: relative;
+    z-index: var(--z-default);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -#{to-rem(20)};
+    padding-top: to-rem(10);
+  }
+
+  @media (orientation: landscape) {
+    display: none;
+  }
+}
+
+.main__logo {
+  display: inline-block;
+  width: to-rem(240);
+  margin-bottom: to-rem(20);
+}
+
+.main__cta-btn {
+  position: relative;
+  z-index: var(--z-default);
+  width: 100%;
+  max-width: to-rem(380);
+  box-shadow: 0 to-rem(7) to-rem(25) rgba(var(--col-incision-rgb), 70%);
+}
+
+.main__main-pic {
+  display: inline-block;
+
+  @media (orientation: portrait) {
+    flex-grow: 1;
+  }
+
+  @media (orientation: landscape) {
+    position: absolute;
+    z-index: var(--z-default);
+    top: 0;
+    right: 50%;
+    height: 100%;
+    aspect-ratio: 1;
+    transform: translateX(15%);
+  }
+
+  img {
+    object-fit: cover;
+
+    @media (orientation: portrait) {
+      width: 100%;
+    }
+
+    @media (orientation: landscape) {
+      height: 100%;
+    }
+  }
+}
+
+.main__desktop-logo {
+  height: clamp(to-rem(90), vh(16), to-rem(178));
+  margin-top: auto;
+  margin-bottom: vh(3.5);
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.main__desktop-sign-up-wrapper {
+  @media (orientation: portrait) {
+    display: none;
+  }
+
+  @media (orientation: landscape) {
+    position: relative;
+    z-index: var(--z-default);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: vh(2.5) 4vw;
+    background-color: var(--col-dark-tone-ink);
+    overflow-y: auto;
+
+    .sign-up-form__form {
+      max-width: clamp(to-rem(330), 22vw, to-rem(418));
+      margin-bottom: auto;
+    }
+
+    .sign-up-form__title {
+      margin-bottom: vh(3.5);
+      font-size: to-rem(24);
+    }
+  }
+}
+
+.main__decor-confetti-1 {
+  position: absolute;
+  z-index: var(--z-default);
+  aspect-ratio: 0.88;
+
+  @include bg-image('/img/decor/confetti-1');
+
+  @media (orientation: portrait) {
+    top: to-rem(80);
+    width: to-rem(140);
+    left: -#{to-rem(60)};
+  }
+
+  @media (orientation: landscape) {
+    top: vh(26);
+    width: to-rem(160);
+    left: 0;
+  }
+}
+
+.main__decor-confetti-2 {
+  position: absolute;
+  z-index: var(--z-default);
+  aspect-ratio: 0.665;
+
+  @include bg-image('/img/decor/confetti-2');
+
+  @media (orientation: portrait) {
+    top: to-rem(50);
+    width: to-rem(170);
+    right: -#{to-rem(15)};
+  }
+
+  @media (orientation: landscape) {
+    bottom: 0;
+    right: 0;
+    width: 15vw;
+  }
+}

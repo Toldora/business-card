@@ -1,0 +1,73 @@
+<main class="main container">
+  <div class="main__content container">
+    <picture class="main__logo">
+      <source
+        type="image/webp"
+        srcset="/img/aviator-logo.webp 240w, /img/aviator-logo@2x.webp 480w"
+        sizes="240px"
+      />
+      <source
+        type="image/png"
+        srcset="/img/aviator-logo.png 240w, /img/aviator-logo@2x.png 480w"
+        sizes="240px"
+      />
+      <img
+        src="/img/aviator-logo.png"
+        width="240"
+        height="178"
+        alt=""
+        loading="lazy"
+      />
+    </picture>
+    <button
+      class="main__cta-btn app-button js-show-auth-btn"
+      type="button"
+      aria-label="Inscrever-se"
+    >
+      Inscrever-se
+    </button>
+  </div>
+  <picture class="main__main-pic">
+    <source
+      type="image/webp"
+      srcset="/img/main-pic.webp 1000w, /img/main-pic@2x.webp 2000w"
+      sizes="1000px"
+    />
+    <source
+      type="image/png"
+      srcset="/img/main-pic.png 1000w, /img/main-pic@2x.png 2000w"
+      sizes="1000px"
+    />
+    <img
+      src="/img/main-pic.png"
+      width="1000"
+      height="1000"
+      alt=""
+      loading="lazy"
+    />
+  </picture>
+  <div class="main__desktop-sign-up-wrapper">
+    <picture class="main__desktop-logo">
+      <source
+        type="image/webp"
+        srcset="/img/aviator-logo.webp 240w, /img/aviator-logo@2x.webp 480w"
+        sizes="240px"
+      />
+      <source
+        type="image/png"
+        srcset="/img/aviator-logo.png 240w, /img/aviator-logo@2x.png 480w"
+        sizes="240px"
+      />
+      <img
+        src="/img/aviator-logo.png"
+        width="240"
+        height="178"
+        alt=""
+        loading="lazy"
+      />
+    </picture>
+    {{> sign-up-form title="Criar Sua Conta Grátis" name="desktopSignUp" }}
+  </div>
+</main>
+<div class="main__decor-confetti-1"></div>
+<div class="main__decor-confetti-2"></div>
