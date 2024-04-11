@@ -12,16 +12,16 @@
     <picture class="main__user-emoji-pic">
       <source
         type="image/webp"
-        srcset="/img/emoji-1.webp 90w, /img/emoji-1@2x.webp 180w"
+        srcset="/img/{{emoji}}.webp 90w, /img/{{emoji}}@2x.webp 180w"
         sizes="90px"
       />
       <source
         type="image/png"
-        srcset="/img/emoji-1.png 90w, /img/emoji-1@2x.png 180w"
+        srcset="/img/{{emoji}}.png 90w, /img/{{emoji}}@2x.png 180w"
         sizes="90px"
       />
       <img
-        src="/img/emoji-1.png"
+        src="/img/{{emoji}}.png"
         width="90"
         height="90"
         alt=""
@@ -53,7 +53,7 @@
     <li class="main__social-list-item">
       <a
         class="main__social-link"
-        href="https://t.me/gabriel0costa"
+        href="https://t.me/{{telegram}}"
         target="_blank"
         rel="nofollow noopener noreferrer"
         aria-label="Contact via Telegram"
@@ -62,14 +62,14 @@
           {{> svg-icon width="32" height="32" name='telegram' }}
         </div>
         <p class="main__social-text-wrapper">
-          <span class="main__social-text">@gabriel0costa</span>
+          <span class="main__social-text">@{{telegram}}</span>
         </p>
       </a>
     </li>
     <li class="main__social-list-item">
       <a
         class="main__social-link"
-        href="https://wa.me/555193343948"
+        href="https://wa.me/{{whatsapp}}"
         target="_blank"
         rel="nofollow noopener noreferrer"
         aria-label="Contact via Whatsapp"
@@ -78,7 +78,7 @@
           {{> svg-icon width="32" height="32" name='whatsapp' }}
         </div>
         <p class="main__social-text-wrapper">
-          <span class="main__social-text">+555193343948</span>
+          <span class="main__social-text">+{{whatsapp}}</span>
         </p>
       </a>
     </li>
