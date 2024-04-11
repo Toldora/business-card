@@ -30,14 +30,14 @@
     </picture>
     <div>
       <h2 class="main__user-name">{{name}}</h2>
-      <p class="main__user-position">CMO</p>
+      <p class="main__user-position">{{position}}</p>
     </div>
   </div>
   <ul class="main__social-list">
     <li class="main__social-list-item">
       <a
         class="main__social-link"
-        href="mailto:gafelipe.costa7@gmail.com"
+        href="mailto:{{email}}"
         target="_blank"
         rel="nofollow noopener noreferrer"
         aria-label="Send email"
@@ -46,7 +46,7 @@
           {{> svg-icon width="32" height="32" name='email' }}
         </div>
         <p class="main__social-text-wrapper">
-          <span class="main__social-text">gafelipe.costa7@gmail.com</span>
+          <span class="main__social-text">{{email}}</span>
         </p>
       </a>
     </li>

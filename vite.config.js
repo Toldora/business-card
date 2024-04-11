@@ -46,13 +46,17 @@ export default defineConfig(({ mode }) => {
         // template: '/index.html',
         pages: [
           {
-            entry: '/src/pages/gabriel/main.js',
-            template: '/src/pages/gabriel/index.html',
+            entry: '/src/main.js',
+            template: '/index.html',
+          },
+          {
+            entry: '/pages/gabriel/main.js',
+            template: '/pages/gabriel/index.html',
             // template: '/gabriel.html',
           },
           {
-            entry: '/src/pages/traffer/main.js',
-            template: '/src/pages/traffer/index.html',
+            entry: '/pages/traffer/main.js',
+            template: '/pages/traffer/index.html',
             // filename: '/gabriel.html',
             // template: '/gabriel.html',
           },
