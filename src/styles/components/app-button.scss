@@ -1,28 +1,28 @@
 .app-button {
-  min-height: to-rem(40);
+  min-height: to-rem(48);
   padding: 0 to-rem(24);
-  background-color: var(--col-rich-red);
-  color: var(--col-total-white);
+  background-color: var(--col-tibetan-yellow);
+  color: var(--col-downwell);
+  box-shadow: none;
   border-radius: to-rem(12);
-  font-size: to-rem(14);
+  font-size: to-rem(16);
   line-height: 1.3;
   font-weight: 700;
   transition: background-color var(--hover-transition);
 
-  // @include respond-above(medium) {
-  //   padding: 0 to-rem(30);
-  //   font-size: to-rem(18);
-  // }
-
   &--disabled,
   &:disabled {
-    background-color: var(--col-caraquenian-crimson);
+    background-color: var(--col-nuclear-fallout);
     cursor: default;
+  }
+
+  &:hover {
+    color: var(--col-downwell);
   }
 
   @include hover {
     &:not(:disabled):not(.app-button--disabled) {
-      background-color: var(--col-love-red);
+      background-color: var(--col-total-white);
     }
   }
 }

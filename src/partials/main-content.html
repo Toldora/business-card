@@ -1,73 +1,97 @@
-<main class="main container">
-  <div class="main__content container">
-    <picture class="main__logo">
+<main class="main">
+  <a
+    class="main__logo-link"
+    href="https://mayan.bet/"
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+    aria-label="Mayan.bet"
+  >
+    {{> svg-icon width="153" height="30" name='logo' }}
+  </a>
+  <div class="main__user-wrapper">
+    <picture class="main__user-emoji-pic">
       <source
         type="image/webp"
-        srcset="/img/aviator-logo.webp 240w, /img/aviator-logo@2x.webp 480w"
-        sizes="240px"
+        srcset="/img/emoji-1.webp 90w, /img/emoji-1@2x.webp 180w"
+        sizes="90px"
       />
       <source
         type="image/png"
-        srcset="/img/aviator-logo.png 240w, /img/aviator-logo@2x.png 480w"
-        sizes="240px"
+        srcset="/img/emoji-1.png 90w, /img/emoji-1@2x.png 180w"
+        sizes="90px"
       />
       <img
-        src="/img/aviator-logo.png"
-        width="240"
-        height="178"
+        src="/img/emoji-1.png"
+        width="90"
+        height="90"
         alt=""
         loading="lazy"
       />
     </picture>
-    <button
-      class="main__cta-btn app-button js-show-auth-btn"
-      type="button"
-      aria-label="Inscrever-se"
-    >
-      Inscrever-se
-    </button>
+    <div>
+      <h2 class="main__user-name">Gabriel Costa</h2>
+      <p class="main__user-position">CMO</p>
+    </div>
   </div>
-  <picture class="main__main-pic">
-    <source
-      type="image/webp"
-      srcset="/img/main-pic.webp 1000w, /img/main-pic@2x.webp 2000w"
-      sizes="1000px"
-    />
-    <source
-      type="image/png"
-      srcset="/img/main-pic.png 1000w, /img/main-pic@2x.png 2000w"
-      sizes="1000px"
-    />
-    <img
-      src="/img/main-pic.png"
-      width="1000"
-      height="1000"
-      alt=""
-      loading="lazy"
-    />
-  </picture>
-  <div class="main__desktop-sign-up-wrapper">
-    <picture class="main__desktop-logo">
-      <source
-        type="image/webp"
-        srcset="/img/aviator-logo.webp 240w, /img/aviator-logo@2x.webp 480w"
-        sizes="240px"
-      />
-      <source
-        type="image/png"
-        srcset="/img/aviator-logo.png 240w, /img/aviator-logo@2x.png 480w"
-        sizes="240px"
-      />
-      <img
-        src="/img/aviator-logo.png"
-        width="240"
-        height="178"
-        alt=""
-        loading="lazy"
-      />
-    </picture>
-    {{> sign-up-form title="Criar Sua Conta Grátis" name="desktopSignUp" }}
-  </div>
+  <ul class="main__social-list">
+    <li class="main__social-list-item">
+      <a
+        class="main__social-link"
+        href="mailto:gafelipe.costa7@gmail.com"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        aria-label="Send email"
+      >
+        <div class="main__social-icon-wrapper">
+          {{> svg-icon width="32" height="32" name='email' }}
+        </div>
+        <p class="main__social-text-wrapper">
+          <span class="main__social-text">gafelipe.costa7@gmail.com</span>
+        </p>
+      </a>
+    </li>
+    <li class="main__social-list-item">
+      <a
+        class="main__social-link"
+        href="https://t.me/gabriel0costa"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        aria-label="Contact via Telegram"
+      >
+        <div class="main__social-icon-wrapper">
+          {{> svg-icon width="32" height="32" name='telegram' }}
+        </div>
+        <p class="main__social-text-wrapper">
+          <span class="main__social-text">@gabriel0costa</span>
+        </p>
+      </a>
+    </li>
+    <li class="main__social-list-item">
+      <a
+        class="main__social-link"
+        href="https://wa.me/555193343948"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        aria-label="Contact via Whatsapp"
+      >
+        <div class="main__social-icon-wrapper">
+          {{> svg-icon width="32" height="32" name='whatsapp' }}
+        </div>
+        <p class="main__social-text-wrapper">
+          <span class="main__social-text">+555193343948</span>
+        </p>
+      </a>
+    </li>
+  </ul>
+  <a
+    class="main__cta-btn app-button"
+    href="https://mayan.bet/"
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+    aria-label="Mayan.bet"
+  >
+    {{> svg-icon class='main__cta-btn-icon' width='24' height='24' name='cherry'
+    }}
+    <span>Sign up</span>
+  </a>
 </main>
-<div class="main__decor-confetti-1"></div>
-<div class="main__decor-confetti-2"></div>

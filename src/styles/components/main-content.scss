@@ -7,161 +7,118 @@
   @include bg-img-webp($path, true);
 }
 
+%common-block {
+  background-color: var(--col-gordons-green);
+  border-radius: to-rem(10);
+}
+
 .main {
-  position: relative;
-  z-index: var(--z-main-content);
-  height: calc(vh(100) - var(--app-navbar-height));
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  padding-top: to-rem(20);
+  padding-bottom: to-rem(20);
+}
 
-  @media (orientation: portrait) {
-    flex-direction: column;
-    max-width: unset;
+.main__logo-link {
+  display: inline-block;
+  align-self: center;
+  margin-bottom: to-rem(30);
+}
 
-    &.main {
-      padding: 0;
+.main__user-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: to-rem(30);
+  padding: to-rem(15);
+  color: var(--col-total-white);
+
+  @extend %common-block;
+}
+
+.main__user-emoji-pic {
+  display: inline-block;
+  margin-right: to-rem(10);
+  border-radius: to-rem(10);
+  background-color: var(--col-rich-olive);
+}
+
+.main__user-name {
+  margin-bottom: to-rem(5);
+  font-size: to-rem(18);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.main__social-list {
+  margin-bottom: to-rem(30);
+}
+
+.main__social-list-item {
+  &:not(:last-child) {
+    margin-bottom: to-rem(15);
+  }
+}
+
+.main__social-link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: to-rem(60);
+  grid-gap: to-rem(15);
+
+  @include hover {
+    .main__social-text {
+      color: var(--col-total-white);
+
+      &::after {
+        left: 0;
+        width: 100%;
+      }
     }
   }
-
-  @media (orientation: landscape) {
-    align-items: stretch;
-    justify-content: flex-end;
-  }
 }
 
-.main__content {
-  @media (orientation: portrait) {
-    position: relative;
-    z-index: var(--z-default);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: -#{to-rem(20)};
-    padding-top: to-rem(10);
-  }
+.main__social-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: to-rem(60);
 
-  @media (orientation: landscape) {
-    display: none;
-  }
+  @extend %common-block;
 }
 
-.main__logo {
+.main__social-text-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 to-rem(15);
+
+  @extend %common-block;
+}
+
+.main__social-text {
   display: inline-block;
-  width: to-rem(240);
-  margin-bottom: to-rem(20);
+  position: relative;
+  transition: color var(--hover-transition);
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -#{to-rem(1)};
+    width: 0;
+    height: to-rem(1);
+    background-color: var(--col-total-white);
+    content: '';
+    transition: width var(--hover-transition);
+  }
 }
 
 .main__cta-btn {
-  position: relative;
-  z-index: var(--z-default);
   width: 100%;
-  max-width: to-rem(380);
-  box-shadow: 0 to-rem(7) to-rem(25) rgba(var(--col-incision-rgb), 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.main__main-pic {
-  display: inline-block;
-
-  @media (orientation: portrait) {
-    flex-grow: 1;
-  }
-
-  @media (orientation: landscape) {
-    position: absolute;
-    z-index: var(--z-default);
-    top: 0;
-    right: 50%;
-    height: 100%;
-    aspect-ratio: 1;
-    transform: translateX(15%);
-  }
-
-  img {
-    object-fit: cover;
-
-    @media (orientation: portrait) {
-      width: 100%;
-    }
-
-    @media (orientation: landscape) {
-      height: 100%;
-    }
-  }
-}
-
-.main__desktop-logo {
-  height: clamp(to-rem(90), vh(16), to-rem(178));
-  margin-top: auto;
-  margin-bottom: vh(3.5);
-
-  img {
-    height: 100%;
-    width: auto;
-  }
-}
-
-.main__desktop-sign-up-wrapper {
-  @media (orientation: portrait) {
-    display: none;
-  }
-
-  @media (orientation: landscape) {
-    position: relative;
-    z-index: var(--z-default);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: vh(2.5) 4vw;
-    background-color: var(--col-dark-tone-ink);
-    overflow-y: auto;
-
-    .sign-up-form__form {
-      max-width: clamp(to-rem(330), 22vw, to-rem(418));
-      margin-bottom: auto;
-    }
-
-    .sign-up-form__title {
-      margin-bottom: vh(3.5);
-      font-size: to-rem(24);
-    }
-  }
-}
-
-.main__decor-confetti-1 {
-  position: absolute;
-  z-index: var(--z-default);
-  aspect-ratio: 0.88;
-
-  @include bg-image('/img/decor/confetti-1');
-
-  @media (orientation: portrait) {
-    top: to-rem(80);
-    width: to-rem(140);
-    left: -#{to-rem(60)};
-  }
-
-  @media (orientation: landscape) {
-    top: vh(26);
-    width: to-rem(160);
-    left: 0;
-  }
-}
-
-.main__decor-confetti-2 {
-  position: absolute;
-  z-index: var(--z-default);
-  aspect-ratio: 0.665;
-
-  @include bg-image('/img/decor/confetti-2');
-
-  @media (orientation: portrait) {
-    top: to-rem(50);
-    width: to-rem(170);
-    right: -#{to-rem(15)};
-  }
-
-  @media (orientation: landscape) {
-    bottom: 0;
-    right: 0;
-    width: 15vw;
-  }
+.main__cta-btn-icon {
+  margin-right: to-rem(6);
 }
